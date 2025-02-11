@@ -1,0 +1,25 @@
+{
+    "verilog.linting.linter": "iverilog",
+    "verilog.linting.iverilog.includePath": [
+        "./",
+        "./src",
+        "./include"
+    ],
+    "verilog.linting.iverilog.arguments": "-i", // 如果需要额外的参数可以调整
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+},
+{
+    "makefile.tools": [
+        {
+            "name": "Makefile", // 任务名称
+            "makePath": "make", // make 工具的路径，通常系统默认即可
+            "makeArgs": [], // 如果你需要传递额外的参数，可以放这里
+            "buildDir": "${workspaceFolder}/build", // 生成文件存放的目录
+            "targets": [
+                "all", // 默认的 Makefile 目标
+                "run" // 如果你有 run 目标，允许选择
+            ]
+        }
+    ]
+}

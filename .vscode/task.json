@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Verilog with Iverilog",
+            "type": "shell",
+            "command": "iverilog",
+            "args": [
+                "-o",
+                "simulation.vvp",
+                "src/*.v"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$verilog"
+            ]
+        }
+    ]
+}
