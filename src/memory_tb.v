@@ -320,16 +320,38 @@ initial begin
     #1 clk=1;
     #1 rst_n=1;
     #1 clk=0;
-
-    
-    #120  $finish;
-end
-
-initial begin
-    // $monitor("Time=%0t, fetch: D_PC=%d, D_icode=%h, D_ifun=%h, D_rA=%h, D_rB=%h, D_valC=%h, D_valP=%h,",$time, D_pc, D_icode, D_ifun, D_rA, D_rB, D_valC, D_valP);
-    // $monitor("decode: E_pc=%d, E_icode=%h, E_ifun=%h, E_valC=%h, E_valA=%h, E_valB=%h, E_srcA=%h, E_srcB=%h,",E_pc, E_icode, E_ifun, E_valC, E_valA, E_valB, E_srcA, E_srcB);
-    // $monitor("execute: M_pc=%d, M_icode=%h, M_ifun=%h, M_valE=%h, M_valA=%h,",M_pc, M_icode, M_ifun, M_valE, M_valA);
-    // $monitor("memory: W_pc=%d, W_icode=%h, W_valE=%h, W_valM=%h",W_pc, W_icode, W_valE, W_valM);
     $monitor("Time=%0t,\n\tfetch  : D_PC=%4d, D_icode=%h, D_ifun=%h, D_rA=%h, D_rB=%h, D_valC=%h, D_valP=%h\n\tdecode : E_pc=%4d, E_icode=%h, E_ifun=%h, E_valC=%h, E_valA=%h, E_valB=%h, E_srcA=%h, E_srcB=%h\n\texecute: M_pc=%4d, M_icode=%h, M_ifun=%h, M_valE=%h, M_valA=%h\n\tmemory : W_pc=%4d, W_icode=%h, W_valE=%h, W_valM=%h",$time, D_pc, D_icode, D_ifun, D_rA, D_rB, D_valC, D_valP,E_pc, E_icode, E_ifun, E_valC, E_valA, E_valB, E_srcA, E_srcB,M_pc, M_icode, M_ifun, M_valE, M_valA,W_pc, W_icode, W_valE, W_valM);
+ 
+    
+    #1200  $finish;
 end
+   
+    // always @(posedge clk) begin
+    //      $display("Time=%0t",$time);
+    // end 
+    // // 输出 fetch 阶段的信号
+    // always @(posedge clk) begin
+    //     $display("F Stage: f_pc = %h, f_predPC = %h, f_icode = %h, f_ifun = %h", f_pc, f_predPC, f_icode, f_ifun);
+    // end
+
+    // // Output decode stage signals
+    // always @(posedge clk) begin
+    //     $display("D Stage: D_pc = %h, D_icode = %h, D_ifun = %h, D_rA = %h, D_rB = %h, D_valC = %h", D_pc, D_icode, D_ifun, D_rA, D_rB, D_valC);
+    // end
+
+    // // Output execute stage signals
+    // always @(posedge clk) begin
+    //     $display("E Stage: E_pc = %h, E_icode = %h, E_ifun = %h, E_valA = %h, E_valB = %h, E_valC = %h, E_dstE = %h", E_pc, E_icode, E_ifun, E_valA, E_valB, E_valC, E_dstE);
+    // end
+
+    // // Output memory stage signals
+    // always @(posedge clk) begin
+    //     $display("M Stage: M_pc = %h, M_icode = %h, M_ifun = %h, M_valE = %h, M_valA = %h", M_pc, M_icode, M_ifun, M_valE, M_valA);
+    // end
+
+    // // Output write-back stage signals
+    // always @(posedge clk) begin
+    //     $display("W Stage: W_pc = %h, W_icode = %h, W_valE = %h, W_valM = %h, W_dstE = %h, W_dstM = %h", W_pc, W_icode, W_valE, W_valM, W_dstE, W_dstM);
+    // end
+
 endmodule

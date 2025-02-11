@@ -200,29 +200,30 @@ module instruction_memory(
     instr_mem[147] = 8'h00;
     instr_mem[148] = 8'h00;
     instr_mem[149] = 8'h00;
-		// //IRMOVQ
-		// instr_mem[0] = 8'h30; // icode=3, ifun=0
-		// instr_mem[1] = 8'hF1; // rA=F, rB=1
-		// instr_mem[2] = 8'hF0; // valC=0x123456789ABCDEF0 (little-endian)
-		// instr_mem[3] = 8'hDE;
-		// instr_mem[4] = 8'hBC;
-		// instr_mem[5] = 8'h9A;
-		// instr_mem[6] = 8'h78;
-		// instr_mem[7] = 8'h56;
-		// instr_mem[8] = 8'h34;
-		// instr_mem[9] = 8'h12;
+
+    //IRMOVQ
+    instr_mem[150] = 8'h30; // icode=3, ifun=0
+    instr_mem[151] = 8'hF1; // rA=F, rB=1
+    instr_mem[152] = 8'hF0; // valC=0x123456789ABCDEF0 (little-endian)
+    instr_mem[153] = 8'hDE;
+    instr_mem[154] = 8'hBC;
+    instr_mem[155] = 8'h9A;
+    instr_mem[156] = 8'h78;
+    instr_mem[157] = 8'h56;
+    instr_mem[158] = 8'h34;
+    instr_mem[159] = 8'h12;
 		
-		// //RMMOVQ
-		// instr_mem[10] = 8'h40; // icode=4, ifun=0
-		// instr_mem[11] = 8'h12; // rA=1, rB=2
-		// instr_mem[12] = 8'h10; // valC=0x0010 (little-endian)
-		// instr_mem[13] = 8'h00;
-		// instr_mem[14] = 8'h00;
-		// instr_mem[15] = 8'h00;
-		// instr_mem[16] = 8'h00;
-		// instr_mem[17] = 8'h00;
-		// instr_mem[18] = 8'h00;
-		// instr_mem[19] = 8'h00;
+    //RMMOVQ
+    instr_mem[10] = 8'h40; // icode=4, ifun=0
+    instr_mem[11] = 8'h12; // rA=1, rB=2
+    instr_mem[12] = 8'h10; // valC=0x0010 (little-endian)
+    instr_mem[13] = 8'h00;
+    instr_mem[14] = 8'h00;
+    instr_mem[15] = 8'h00;
+    instr_mem[16] = 8'h00;
+    instr_mem[17] = 8'h00;
+    instr_mem[18] = 8'h00;
+    instr_mem[19] = 8'h00;
 		
 		// //MRMOVQ
 		// instr_mem[20] = 8'h50; // icode=5, ifun=0
