@@ -22,3 +22,5 @@ src/wave/*
 *.fsdb
 *.vdb
 *.dump
+
+./Makefile
