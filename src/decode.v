@@ -57,21 +57,26 @@ assign d_rvalB=(d_srcB_o==`RNONE)?64'b0:regfile[d_srcB_o];
 		$display($time," decode:D_icode_i:%h,D_rA_i=%h,D_rB_i=%h d_srcA_o:%h,d_srcB_o:%h, srcAj:%h, srcBj:%h",D_icode_i,D_rA_i,D_rB_i,d_srcA_o,d_srcB_o,(D_icode_i==`IRRMOVQ || D_icode_i==`IRMMOVQ ||
                 D_icode_i==`IOPQ ||D_icode_i==`IPUSHQ ),(D_icode_i==`IOPQ ||D_icode_i==`IRMMOVQ ||D_icode_i==`IMRMOVQ));
 	end*/
+integer i;
 initial begin
-		regfile[0]=64'd0;
-		regfile[1]=64'd1;
-		regfile[2]=64'd2;
-		regfile[3]=64'd3;
-		regfile[4]=64'h0000000000000400;//rsp 768?1023
-		regfile[5]=64'd5;
-		regfile[6]=64'd6;
-		regfile[7]=64'd7;
-		regfile[8]=64'h0000000000000111;
-		regfile[9]=64'd9;
-		regfile[10]=64'd10;
-		regfile[11]=64'd11;
-		regfile[12]=64'd12;
-		regfile[13]=64'd13;
-		regfile[14]=64'd14;
+    // 初始化 regfile 中的所有寄存器为 0
+    for (i = 0; i < 16; i++) begin
+        regfile[i] = 64'd0;
+    end
+		// regfile[0]=64'd0;
+		// regfile[1]=64'd1;
+		// regfile[2]=64'd2;
+		// regfile[3]=64'd3;
+		// regfile[4]=64'h0000000000000400;//rsp 768?1023
+		// regfile[5]=64'd5;
+		// regfile[6]=64'd6;
+		// regfile[7]=64'd7;
+		// regfile[8]=64'h0000000000000111;
+		// regfile[9]=64'd9;
+		// regfile[10]=64'd10;
+		// regfile[11]=64'd11;
+		// regfile[12]=64'd12;
+		// regfile[13]=64'd13;
+		// regfile[14]=64'd14;
 	end
 endmodule
